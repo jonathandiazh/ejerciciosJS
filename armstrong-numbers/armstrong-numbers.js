@@ -1,8 +1,17 @@
-//
-// This is only a SKELETON file for the 'Armstrong Numbers' exercise. It's been provided as a
-// convenience to get you started writing code faster.
-//
+import { String } from "core-js";
 
-export const isArmstrongNumber = () => {
-  throw new Error('Remove this statement and implement this function');
+export const isArmstrongNumber = (number) => {
+  
+  let numbers = String(number).split('');
+  let acumulator = 0;
+
+  for(let i = 0; i< numbers.length; i++){
+    numbers[i] = parseInt(numbers[i]);
+  }
+
+  for(let i = 0; i < numbers.length; i++) {
+    acumulator += numbers[i]**numbers.length;
+  }
+
+  return acumulator == number;
 };
